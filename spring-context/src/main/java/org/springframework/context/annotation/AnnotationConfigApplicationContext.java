@@ -84,6 +84,7 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 * e.g. {@link Configuration @Configuration} classes
 	 */
 	public AnnotationConfigApplicationContext(Class<?>... annotatedClasses) {
+		//这里由于他有父类，故而会先调用父类的构造方法(新建一个Bean工厂（DefaultListableBeanFactory）)，然后才会调用自己的构造方法在自己构造方法中初始一个读取器和扫描器
 		this();
 		register(annotatedClasses);
 		refresh();
