@@ -30,4 +30,5 @@ rootProject.children.each {project ->
 	project.buildFileName = "${project.name}.gradle"
 }
 include 'my-module'
+include 'my-study-iod1'
 
