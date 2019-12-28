@@ -33,6 +33,22 @@ import org.springframework.lang.Nullable;
  * while post-processors that wrap beans with proxies will normally
  * implement {@link #postProcessAfterInitialization}.
  *
+ *
+ * BeanPostProcessor是Spring框架的提供的一个扩展类点（不止一个）
+ * 通过实现BeanPostProcessor接口，程序员就可插手bean实例化的过程，从而减轻了beanFactory的**********(代表这里还有)***********
+ * 值得说明的是这个接口可以设置多个，会形成一个列表，然后依次执行
+ * （但是springt认的怎么办？set）
+ * t比如10P就是在bean实例后期间将切面逻辑织入bean实例中的A0P也正是通过BeanPostProcessor和IOC容器建立起了联系（由spring提供的默认的Pos tPorcessor，spring是供了很多默认的Pos tProcessor，下面我会一一介绍）
+ * 可以来演示一下BeanPostProcessor 的使用方式（把动态代理和IOC、aop结合起来使用）
+ * 在演示之前先来熟悉一下这个接口，其实这个接口本身特别单啦，简单到你发指。但是他的实现类特别复杂，同样复杂到发指！
+ * 可以看看spring提供哪些默认的实现（前方高能）
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  * @author Juergen Hoeller
  * @since 10.10.2003
  * @see InstantiationAwareBeanPostProcessor
