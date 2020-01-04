@@ -235,7 +235,7 @@ public class DefaultSingletonBeanRegistry extends SimpleAliasRegistry implements
 				singletonObject = this.earlySingletonObjects.get(beanName);
 				// 如果如果 singletonObject = null，且允许提前曝光 bean 实例，则从相应的 ObjectFactory 获取一个原始的（raw）bean（尚未填充属性）
 				if (singletonObject == null && allowEarlyReference) {
-					// 获取相应的工厂类
+					// 获取相应的bean工厂类
 					ObjectFactory<?> singletonFactory = this.singletonFactories.get(beanName);
 					if (singletonFactory != null) {
 						// 提前曝光 bean 实例，用于解决循环依赖
