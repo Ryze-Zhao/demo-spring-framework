@@ -46,9 +46,11 @@ public abstract class TemplateAwareExpressionParser implements ExpressionParser 
 	@Override
 	public Expression parseExpression(String expressionString, @Nullable ParserContext context) throws ParseException {
 		if (context != null && context.isTemplate()) {
+			//返回CompositeStringExpression，由​TemplateAwareExpressionParser实现
 			return parseTemplate(expressionString, context);
 		}
 		else {
+			//返回SpelExpression，由​TemplateAwareExpressionParser的子类InternalSpelExpressionParser实现
 			return doParseExpression(expressionString, context);
 		}
 	}
